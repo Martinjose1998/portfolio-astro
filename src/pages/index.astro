@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import CardSvelte from '../components/Card.svelte';
+// import Header from '../components/Header.svelte';
+import ExperienceCard from '../components/ExperienceCard.svelte';
+import ClientsCard from '../components/ClientsCard.svelte';
+import ProjectCard from '../components/ProjectCard.svelte';
+import TechCard from '../components/TechCard.svelte';
+import GalleryCard from '../components/GalleryCard.svelte';
+import ActivitiesCard from '../components/ActivitiesCard.svelte';
+import SpotifyCard from '../components/SpotifyCard.svelte';
+---
+
+<Layout title="Martin Jose - Web Development">
+	<!-- <Header /> -->
+	<main>
+		<div class="cols-wrapper">
+			<ul role="list" class="link-card-grid">
+				<CardSvelte />
+				<ExperienceCard />
+				<TechCard />
+				<ProjectCard
+					title="Bundles System"
+					image="./192shots_so.png"
+					body=""
+					link="https://www.mottandbow.com/products/scrt-drig-blac?bundle=pack-3&color=set-scrt-drig-navy-1_scrt-drig-balt-1_scrt-drig-cblu-1"
+				/>
+				<!--
+					<ActivitiesCard />
+				-->
+				<ProjectCard
+					title="One of my latest clients"
+					image="./65shots_so.png"
+					body="Been working on it's design, performance and creating new features to improve the user experience."
+					link="https://wineryofeurope.com"
+				/>
+				
+			</ul>
+			<ul role="list" class="link-card-grid">
+				<ClientsCard />
+				
+				<ProjectCard
+					title="Stack Builder UI"
+					image="./674shots_so.png"
+					body="Coded the UI and functionality of a bundle builder. I used Web Components and custom CSS."
+					link="https://maxeffortmuscle.com/pages/build-a-stack"
+				/>
+				<ProjectCard
+					title="Website redesign"
+					image="./161shots_so.png"
+					body=""
+					link="https://wineryofeurope.com"
+				/>
+				<SpotifyCard />
+				
+				<!--
+				<GalleryCard />
+				-->
+			</ul>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 3rem 0rem;
+		width: calc(100% - 2rem);
+		max-width: 900px;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+		display: block;
+	}
+	.cols-wrapper {
+		display: flex;
+		gap: 20px;
+		width: 100%;
+	}
+	@media screen and (max-width: 768px) {
+		.cols-wrapper {
+			flex-direction: column;
+			gap: 0;
+		}
+		.cols-wrapper ul {
+			margin: .5rem 0;
+		}
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		padding: 0;
+		width: 100%;
+		justify-content: start;
+		flex-direction: column;
+	}
+</style>
